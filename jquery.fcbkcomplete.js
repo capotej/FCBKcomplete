@@ -576,14 +576,7 @@ jQuery(function($) {
             }
 
             function funCall(func, item) {
-                var _object = "";
-                for (i = 0; i < item.get(0).attributes.length; i++) {
-                    if (item.get(0).attributes[i].nodeValue != null) {
-                        _object += "\"_" + item.get(0).attributes[i].nodeName + "\": \"" + item.get(0).attributes[i].nodeValue + "\",";
-                    }
-                }
-                _object = "{" + _object + " notinuse: 0}";
-                func.call(func, _object);
+                func.call(func, item);
             }
 
             function checkFocusOn() {
